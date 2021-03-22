@@ -8,10 +8,14 @@
   --address-footer-color: rgba(255, 255, 255, 0.6);
   --bcg-color: #2f303a;
   --bcg-color-grey: #f5f4fa;
+  --border-line-header: #ececec;
+  --border-line-card: #eeeeee;
 }
 
 /* font-family: 'Raleway', sans-serif;
 font-family: 'Roboto', sans-serif; */
+
+/* outline: 5px solid tomato; */
 
 /* Стили для всего сайта */
 body {
@@ -25,8 +29,26 @@ body {
   color: var(--primary-text-color);
 }
 
-.list {
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
   list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
 }
 
 .link {
@@ -43,9 +65,26 @@ body {
   color: var(--accent-color);
 }
 
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
 /* ГЛАВНАЯ */
-/* Лого (class="logo-first" возможно убрать, не нужен?) */
+
+/* ХЕДЕР */
+/* Лого */
 .logo {
+  margin-right: 93px;
   font-family: Raleway;
   font-weight: 700;
   font-size: 26px;
@@ -53,28 +92,80 @@ body {
   color: var(--accent-color);
 }
 
-.nav .logo-second {
+.nav .accent {
   color: var(--primary-black-color);
 }
 
 /* Область навигации */
+.header .container,
+.footer .container {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.nav-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border-line-header);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
 .nav-section {
+  display: flex;
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--title-text-color);
 }
 
+.nav-item:not(:last-child) {
+  margin-right: 50px;
+}
+
+/* Увеличиваем область нажатия ссылок */
+.nav-item .link {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
 /* Адреса */
 .address-header {
+  display: flex;
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
 }
 
-/* Герой */
+.nav-address:not(:last-child) {
+  margin-right: 50px;
+}
+
+/* Увеличиваем область нажатия ссылок */
+.nav-address .link {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+/* ГЕРОЙ */
+.hero {
+  padding-top: 200px;
+  padding-bottom: 200px;
+  background-color: var(--bcg-color);
+}
+
 .hero-title {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  width: 630px;
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -84,91 +175,15 @@ body {
   color: var(--primary-white-color);
 }
 
-.hero {
-  background-color: var(--bcg-color);
-}
-
-/* Прячем заголовок уровня h2, как Julia Kleimenova показывала на занятии */
-.visually-hidden {
-  position: absolute !important;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0 !important;
-  border: 0 !important;
-  height: 1px !important;
-  width: 1px !important;
-  overflow: hidden;
-}
-
-/* Особенности */
-.features-list {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.14;
-  text-transform: uppercase;
-  color: var(--title-text-color);
-}
-
-/* Чем мы занимаемся */
-.work-title {
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
-  text-align: center;
-  color: var(--title-text-color);
-}
-/* Наша команда */
-.team-title {
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
-  text-align: center;
-  color: var(--title-text-color);
-}
-
-.team-member {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.19;
-  text-align: center;
-  color: var(--title-text-color);
-}
-
-.team-text {
-  font-size: 16px;
-  line-height: 1.19;
-  text-align: center;
-}
-
-.team-section {
-  background-color: var(--bcg-color-grey);
-}
-
-/* Футер */
-.footer .logo-second {
-  color: var(--primary-white-color);
-}
-
-.address-footer {
-  font-style: normal;
-  color: var(--address-footer-color);
-}
-
-.address-footer .map {
-  color: var(--primary-white-color);
-}
-
-.address-footer .map:hover,
-.address-footer .map:focus {
-  color: var(--accent-color);
-}
-
-.footer {
-  background-color: var(--bcg-color);
-}
-
-/* Кнопка на главной */
+/* Кнопка */
 .button-primary {
+  display: block;
+  border-radius: 4px;
+  padding: 10px 32px;
+  min-width: 200px;
+  border: 1px solid transparent;
+  margin-left: auto;
+  margin-right: auto;
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
@@ -188,6 +203,146 @@ body {
   background-color: var(--hover-color-button);
 }
 
+/* ОСОБЕННОСТИ */
+/* Прячем заголовок уровня h2, как Julia Kleimenova показывала на занятии */
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+.features {
+  display: flex;
+}
+
+/* Первый вариант размещения внутри флекс */
+.features-list:not(:last-child) {
+  margin-right: 30px;
+}
+
+.features-title {
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: var(--title-text-color);
+}
+
+/* Чем мы занимаемся */
+.work-title {
+  margin-bottom: 50px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  color: var(--title-text-color);
+}
+
+.section.no-padding {
+  padding-top: 0;
+}
+
+/* Второй вариант размещения внутри флекс */
+.work {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* НАША КОМАНДА */
+/* Третий вариант размещения внутри флекс - через сетку */
+.team-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+
+.team-item {
+  flex-basis: (calc(100% - 30px * 3) / 3);
+  margin-left: 30px;
+  margin-top: 30px;
+
+  /* Нужна ли тень с радиусом? */
+  /* box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 
+  0px 1px 1px rgba(0, 0, 0, 0.14), 
+  0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px; */
+}
+
+.team-cont {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.team-title {
+  margin-bottom: 50px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  color: var(--title-text-color);
+}
+
+.team-member {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
+  color: var(--title-text-color);
+}
+
+.team-text {
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
+}
+
+.section.team {
+  background-color: var(--bcg-color-grey);
+}
+
+/* ФУТЕР */
+/* Лого, меняем цвет studio */
+.footer .accent {
+  color: var(--primary-white-color);
+}
+
+/* Область адресов с лого */
+.footer-main {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.address-list {
+  margin-top: 20px;
+  font-style: normal;
+  color: var(--address-footer-color);
+}
+
+.address-item:not(:last-child) {
+  margin-bottom: 9px;
+}
+
+.address-list .map {
+  color: var(--primary-white-color);
+}
+
+.address-list .map:hover,
+.address-list .map:focus {
+  color: var(--accent-color);
+}
+
+.footer {
+  background-color: var(--bcg-color);
+}
+
 /* ПОРТФОЛИО */
 /* Прячем заголовок уровня h1, как Julia Kleimenova показывала на занятии */
 .portfolio-title .visually-hidden {
@@ -202,7 +357,11 @@ body {
 }
 
 /* Фильтр */
-.portfolio-section .button-secondary {
+.button-secondary {
+  display: block;
+  border-radius: 4px;
+  padding: 6px 22px;
+  border: 1px solid transparent;
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
@@ -213,15 +372,48 @@ body {
   background-color: var(--bcg-color-grey);
 }
 
-.portfolio-section .button-secondary:hover,
-.portfolio-section .button-secondary:focus {
+.button-secondary:hover,
+.button-secondary:focus {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
   cursor: pointer;
 }
 
+.button-set {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.button-item:not(:last-child) {
+  margin-right: 8px;
+}
+
 /* Работы */
-.item-title {
+.card-set {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+
+.card-item {
+  flex-basis: calc((100% - 30px * 3) / 3);
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+.card-content {
+  padding-top: 20px;
+  padding-right: 24px;
+  padding-left: 24px;
+  padding-bottom: 20px;
+  border-right: 1px solid var(--border-line-card);
+  border-bottom: 1px solid var(--border-line-card);
+  border-left: 1px solid var(--border-line-card);
+}
+
+.card-title {
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
@@ -229,7 +421,8 @@ body {
   color: var(--title-text-color);
 }
 
-.item-text {
+.card-text {
+  margin: 4px 0px 0px 0px;
   font-size: 16px;
   line-height: 1.87;
   color: var(--primary-text-color);
